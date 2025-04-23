@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TRPC_AULO'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TRPC_AULO'
+  }
+}
+define service ZUI_TRPC_AULO_O4 provider contracts odata_v4_ui {
+  expose ZC_TRPC_AULO;
+}

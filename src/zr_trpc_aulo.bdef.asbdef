@@ -1,0 +1,46 @@
+managed implementation in class ZBP_R_TRPC_AULO unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TRPC_AULO alias ZrTrpcAulo
+persistent table ZTRPC_AULO
+draft table ZTRPC_AULO_D
+etag master Locallastchangedat
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( readonly )
+   Orderid,
+   Createdby,
+   Createdat,
+   Locallastchangedby,
+   Locallastchangedat,
+   Lastchangedat;
+
+  field ( numbering : managed )
+   Orderid;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTRPC_AULO
+  {
+    Orderid = orderid;
+    Customer = customer;
+    Vendor = vendor;
+    Company = company;
+    Createdby = createdby;
+    Createdat = createdat;
+    Locallastchangedby = locallastchangedby;
+    Locallastchangedat = locallastchangedat;
+    Lastchangedat = lastchangedat;
+  }
+}

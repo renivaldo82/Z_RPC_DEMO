@@ -1,0 +1,17 @@
+projection implementation in class ZBP_C_TRPC_AULO unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_TRPC_AULO alias ZcTrpcAulo
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}
